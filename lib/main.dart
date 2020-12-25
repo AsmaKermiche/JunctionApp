@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'homepage.dart';
+import 'home.dart';
+import 'map_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,11 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter GoogleMaps Demo',
-      theme: ThemeData(
-        primaryColor: Color(0xff6200ee),
-      ),
-      home: HomePage(),
+      title: 'BmsGeo',
+      theme: ThemeData(),
+      home: Home(),
     );
   }
 }

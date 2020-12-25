@@ -2,12 +2,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class HomePage extends StatefulWidget {
+class Mapp extends StatefulWidget {
   @override
-  HomePageState createState() => HomePageState();
+  MappState createState() => MappState();
 }
 
-class HomePageState extends State<HomePage> {
+class MappState extends State<Mapp> {
   Completer<GoogleMapController> _controller = Completer();
 
   @override
@@ -26,26 +26,32 @@ class HomePageState extends State<HomePage> {
           /*_zoomminusfunction(),
           _zoomplusfunction(),*/
           _buildContainer(),
-
-          Container(
-
-            height: 50.0,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0), color: Colors.white),
-            child: TextField(
-              textInputAction: TextInputAction.search,
-              decoration: InputDecoration(
-                  hintText: "Tapez votre recherche ici ",
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 15.0, top: 15.0),
-                  suffixIcon: IconButton(
-                    icon: Icon(Icons.search,color:Color(0xff80b265)),
-                    // onPressed: searchAndNavigate,
-                    iconSize: 30.0,
-                  )),
-            ),
-          ),
+          Column(
+            children: <Widget>[
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 50.0,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white),
+                child: TextField(
+                  textInputAction: TextInputAction.search,
+                  decoration: InputDecoration(
+                      hintText: "Tapez votre recherche ici ",
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(left: 15.0, top: 15.0),
+                      suffixIcon: IconButton(
+                        icon: Icon(Icons.search, color: Color(0xff80b265)),
+                        // onPressed: searchAndNavigate,
+                        iconSize: 30.0,
+                      )),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
@@ -116,13 +122,8 @@ class HomePageState extends State<HomePage> {
             SizedBox(width: 10.0),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: _boxes(
-                  "https://lh3.googleusercontent.com/proxy/hv-isUvY6c0B3_o4yuQ79JZHfxZEudeO8aoZfZQaeD6oApNHIAASiFVLutPw5-YmvL0jw44Jj5RNh_JnGpQ_OUm6Vg8hLrFMVDT5Nj4VcyIrKEoEaQU2EeXKRPDfDg",
-                  36.9,
-                  7.76667,
-                  "Annaba",
-                  "Kermiche Asma",
-                  "0785491256"),
+              child: _boxes("https://batis.dz/images/94.jpg", 36.9, 7.76667,
+                  "Annaba", "Kermiche Asma", "0785491256"),
             ),
             SizedBox(width: 10.0),
             Padding(
@@ -210,7 +211,9 @@ class HomePageState extends State<HomePage> {
               child: Text(
             storeName,
             style: TextStyle(
-                color: Color(0xff006579), fontSize: 24.0, fontWeight: FontWeight.bold),
+                color: Color(0xff006579),
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold),
           )),
         ),
         SizedBox(height: 5.0),
