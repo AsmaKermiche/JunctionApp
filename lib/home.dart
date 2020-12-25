@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:junctionmap/PopupMenuButtonPage.dart';
 
 import 'map_page.dart';
 
@@ -71,14 +72,29 @@ class Home extends StatelessWidget {
             },
             body: new TabBarView(
               children: [
-                Column(children: <Widget>[
-                  personDetailCard1(),
-                  personDetailCard2(),
-                  personDetailCard3(),
-                  personDetailCard4(),
-                  personDetailCard5(),
-                  personDetailCard6(),
-                ]),
+                Stack(
+                  children: <Widget>[
+                    Column(children: <Widget>[
+                      personDetailCard1(),
+                      personDetailCard2(),
+                      personDetailCard3(),
+                      personDetailCard4(),
+                      personDetailCard5(),
+                      personDetailCard6(),
+                    ]),
+                    Positioned(
+                      right: 10,
+                      bottom: 10,
+                      child: FloatingActionButton(
+                        backgroundColor: Color(0xffffdd2e),
+                        child: Icon(
+                          Icons.add,
+                          color: Color(0xff006579),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 Container(
                   child: Mapp(),
                 )
@@ -152,10 +168,7 @@ Widget personDetailCard1() {
             SizedBox(
               width: 75,
             ),
-            Icon(
-              Icons.more_horiz,
-              color: Colors.white,
-            ),
+            PopupMenuButtonPage(),
           ],
         ),
       ),
@@ -224,10 +237,7 @@ Widget personDetailCard2() {
             SizedBox(
               width: 80,
             ),
-            Icon(
-              Icons.more_horiz,
-              color: Colors.white,
-            ),
+            PopupMenuButtonPage()
           ],
         ),
       ),
@@ -296,10 +306,7 @@ Widget personDetailCard3() {
             SizedBox(
               width: 80,
             ),
-            Icon(
-              Icons.more_horiz,
-              color: Colors.white,
-            ),
+            PopupMenuButtonPage()
           ],
         ),
       ),
@@ -368,10 +375,7 @@ Widget personDetailCard4() {
             SizedBox(
               width: 35,
             ),
-            Icon(
-              Icons.more_horiz,
-              color: Colors.white,
-            ),
+            PopupMenuButtonPage()
           ],
         ),
       ),
@@ -441,10 +445,7 @@ Widget personDetailCard5() {
             SizedBox(
               width: 80,
             ),
-            Icon(
-              Icons.more_horiz,
-              color: Colors.white,
-            ),
+            PopupMenuButtonPage()
           ],
         ),
       ),
@@ -513,10 +514,7 @@ Widget personDetailCard6() {
             SizedBox(
               width: 80,
             ),
-            Icon(
-              Icons.more_horiz,
-              color: Colors.white,
-            ),
+            PopupMenuButtonPage()
           ],
         ),
       ),
